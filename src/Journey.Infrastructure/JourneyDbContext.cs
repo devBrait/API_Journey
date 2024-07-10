@@ -10,5 +10,12 @@ namespace Journey.Infrastructure
         {
             optionsBuilder.UseSqlite("Data Source=C:\\Users\\lorim\\OneDrive\\Documentos\\PROJETOS\\SQL\\JourneyDatabase.db");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Activity>().ToTable("Activities");
+        }
     }
 }

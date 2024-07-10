@@ -1,6 +1,5 @@
 ﻿using Journey.Communication.Requests;
 using Journey.Communication.Responses;
-using Journey.Exception;
 using Journey.Exception.ExceptionsBase;
 using Journey.Infrastructure;
 using Journey.Infrastructure.Entities;
@@ -36,20 +35,17 @@ namespace Journey.Application.UseCases.Trips.Register
 
         private void Validate(RequestRegisterTripJson request)
         {
-            if (string.IsNullOrEmpty(request.Name))
+            var validator = new RegisterTripValidator();
+
+            var result = validator.Validate(request);
+
+            if (result.IsValid == false)
             {
-                throw new JourneyException(ResourceErrorMessages.NameEmpty);
+                var errorMessages = result.Errors.Select(error => error.ErrorMessage).ToList();
+
+                throw new ErrorOnValidationException(errorMessages);
             }
 
-            if (request.StartDate.Date < DateTime.UtcNow.Date)
-            {
-                throw new JourneyException(ResourceErrorMessages.DateStartTrip);
-            }
-
-            if (request.EndDate.Date < request.StartDate.Date)
-            {
-                throw new JourneyException(ResourceErrorMessages.DateEndTrip);
-            }
         }
     }
 }

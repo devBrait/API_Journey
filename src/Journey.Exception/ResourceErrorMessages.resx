@@ -126,4 +126,7 @@
   <data name="NameEmpty" xml:space="preserve">
     <value>The name cannot be empty.</value>
   </data>
+  <data name="TripNotFound" xml:space="preserve">
+    <value>Trip not found</value>
+  </data>
 </root>

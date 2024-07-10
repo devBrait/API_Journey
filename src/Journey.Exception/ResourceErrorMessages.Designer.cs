@@ -86,5 +86,14 @@ namespace Journey.Exception {
                 return ResourceManager.GetString("NameEmpty", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trip not found.
+        /// </summary>
+        public static string TripNotFound {
+            get {
+                return ResourceManager.GetString("TripNotFound", resourceCulture);
+            }
+        }
     }
 }
