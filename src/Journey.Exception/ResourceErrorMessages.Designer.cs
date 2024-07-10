@@ -61,6 +61,15 @@ namespace Journey.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activity not found..
+        /// </summary>
+        public static string ActivityNotFound {
+            get {
+                return ResourceManager.GetString("ActivityNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The end date of the trip must be equal to or later than the Start Date..
         /// </summary>
         public static string DateEndTrip {
@@ -79,6 +88,24 @@ namespace Journey.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The date you selected for the activity is not within your travel period.
+        /// </summary>
+        public static string DateTravelNotValid {
+            get {
+                return ResourceManager.GetString("DateTravelNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown error..
+        /// </summary>
+        public static string ErrorUnknown {
+            get {
+                return ResourceManager.GetString("ErrorUnknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The name cannot be empty..
         /// </summary>
         public static string NameEmpty {
@@ -88,7 +115,7 @@ namespace Journey.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Trip not found.
+        ///   Looks up a localized string similar to Trip not found..
         /// </summary>
         public static string TripNotFound {
             get {
